@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: telegram-women-quotes-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m app.main
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: WEBHOOK_BASE_URL
+        sync: false
